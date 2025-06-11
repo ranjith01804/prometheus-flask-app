@@ -69,7 +69,7 @@ sudo systemctl daemon-reload
 sudo systemctl restart prometheus
 sudo systemctl status prometheus
 
-# After Proper installation expected output
+# Expected output after Proper installation
 <img width="1787" alt="image" src="https://github.com/user-attachments/assets/09a883bf-2e05-4166-8b43-51da3289e197" />
 
 <img width="1787" alt="image" src="https://github.com/user-attachments/assets/2be58b96-7011-47df-9440-a4cb07e88412" />
@@ -128,6 +128,7 @@ Pass: admin
 
 
 
+# Created Dashboard
 
 <img width="1787" alt="image" src="https://github.com/user-attachments/assets/bf64a22b-8c00-4496-9544-efb3899acd05" />
 
