@@ -1,4 +1,4 @@
-# Run a pyhton flask application under supervisorctl in ubutu with integration of prometheus and grafana.
+# Run a pyhton flask application under supervisorctl in ubuntu with integration of prometheus and grafana.
 
 
 # Install supervisorctl to run a python application
@@ -69,6 +69,10 @@ sudo systemctl daemon-reload
 sudo systemctl restart prometheus
 sudo systemctl status prometheus
 
+# After Proper installation expected output
+<img width="1787" alt="image" src="https://github.com/user-attachments/assets/09a883bf-2e05-4166-8b43-51da3289e197" />
+
+<img width="1787" alt="image" src="https://github.com/user-attachments/assets/2be58b96-7011-47df-9440-a4cb07e88412" />
 
 
 
@@ -105,10 +109,6 @@ sudo systemctl status node_exporter
 
 
 
-
-
-
-
 # Grafana Installation
 sudo apt-get install -y software-properties-common
 sudo add-apt-repository "deb https://packages.grafana.com/oss/deb stable main"
@@ -122,3 +122,12 @@ sudo systemctl enable --now grafana-server
 # Grafana User and Password
 User: admin
 Pass: admin
+
+# Prometheus datasource Integrated in grafana
+<img width="1427" alt="image" src="https://github.com/user-attachments/assets/83814f5e-63e5-4d41-86b8-c837e318b3ce" />
+
+
+
+
+<img width="1787" alt="image" src="https://github.com/user-attachments/assets/bf64a22b-8c00-4496-9544-efb3899acd05" />
+
