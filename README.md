@@ -41,10 +41,50 @@ sudo mkdir -p /etc/prometheus /var/lib/prometheus
 sudo cp -r consoles console_libraries /etc/prometheus/
 
 
+sudo useradd --no-create-home --shell /usr/sbin/nologin prometheus
+
+sudo chown -R prometheus:prometheus /etc/prometheus
+sudo chown -R prometheus:prometheus /var/lib/prometheus
+
+
+
 sudo vi /etc/prometheus/prometheus.yml
 
 
+promtool check config /etc/prometheus/prometheus.yml
 
+
+sudo systemctl daemon-reexec
+sudo systemctl daemon-reload
+sudo systemctl enable --now prometheus
+
+systemctl status prometheus
+
+sudo systemctl daemon-reload
+sudo systemctl restart prometheus
+sudo systemctl status prometheus
+
+
+Install Node exporter to make a dashboard about system resource usage like CPU,Memory..
+
+# Download latest Node Exporter (adjust version as needed)
+wget https://github.com/prometheus/node_exporter/releases/download/v1.6.1/node_exporter-1.6.1.linux-amd64.tar.gz
+
+# Extract
+tar xvfz node_exporter-1.6.1.linux-amd64.tar.gz
+
+# Move binary to /usr/local/bin
+sudo mv node_exporter-1.6.1.linux-amd64/node_exporter /usr/local/bin/
+
+# Cleanup
+rm -rf node_exporter-1.6.1.linux-amd64*
+
+
+sudo systemctl daemon-reload
+sudo systemctl start node_exporter
+sudo systemctl enable node_exporter
+
+sudo systemctl status node_exporter
 
 
 
